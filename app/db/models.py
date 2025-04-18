@@ -17,7 +17,7 @@ class Patient(Base):
 class HeartRate(Base):
     __tablename__ = "heart_rate"
     id = Column(Integer, primary_key=True, index=True)
-    patient_id = Column(Integer, ForeignKey("patients.id"))
+    patient_id = Column(Integer, ForeignKey("patient.id"))
     rate = Column(Integer)
     date = Column(DateTime)
 
@@ -25,7 +25,7 @@ class HeartRate(Base):
 class BloodPressure(Base):
     __tablename__ = "blood_pressure"
     id = Column(Integer, primary_key=True, index=True)
-    patient_id = Column(Integer, ForeignKey("patients.id"))
+    patient_id = Column(Integer, ForeignKey("patient.id"))
     systolic = Column(Float)
     diastolic = Column(Float)
     date = Column(DateTime)

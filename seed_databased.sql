@@ -8,7 +8,7 @@ CREATE TABLE patient (
 -- Create Blood Pressure table with foreign key to patients
 CREATE TABLE blood_pressure (
   id SERIAL PRIMARY KEY,
-  patient_id INTEGER REFERENCES patients(id),
+  patient_id INTEGER REFERENCES patient(id),
   systolic INTEGER NOT NULL,
   diastolic INTEGER NOT NULL,
   date DATE NOT NULL
@@ -16,7 +16,7 @@ CREATE TABLE blood_pressure (
 -- Create Heart Rate table with foreign key to patients
 CREATE TABLE heart_rate (
   id SERIAL PRIMARY KEY,
-  patient_id INTEGER REFERENCES patients(id),
+  patient_id INTEGER REFERENCES patient(id),
   rate INTEGER NOT NULL,
   date DATE NOT NULL
 );
